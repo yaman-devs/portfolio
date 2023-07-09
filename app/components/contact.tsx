@@ -5,9 +5,11 @@ export default function Contact() {
     <form
       method="POST"
       data-netlify="true"
+      action={"/"}
       name="contact"
       className="flex flex-col justify-center gap-2 items-center min-h-[250px] bg-primary-button"
     >
+      <input type="hidden" name="form-name" value="contact" />
       <div>
         <input
           className="min-w-[300px] px-2 bg-transparent border focus-visible:outline-none "
