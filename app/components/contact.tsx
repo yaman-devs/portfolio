@@ -4,6 +4,7 @@ export default function Contact() {
   return (
     <form
       name="contact"
+      method="POST"
       data-netlify="true"
       className="flex flex-col justify-center gap-2 items-center min-h-[250px] bg-primary-button"
     >
