@@ -1,6 +1,7 @@
 import Navbar from "./components/navbar";
 import "../styles/globals.scss";
 import { Roboto } from "next/font/google";
+import Contact from "./components/contact";
 
 const roborto = Roboto({
   weight: ["100", "300", "400", "500", "700", "900"],
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body className={roborto.className + " bg-background text-text"}>
         <Navbar />
         {children}
+        <Contact />
       </body>
     </html>
   );
