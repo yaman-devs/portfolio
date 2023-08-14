@@ -2,7 +2,7 @@
 
 export default function Contact() {
   return (
-    <div className="flex flex-col justify-center items-center bg-primary-button py-8 ">
+    <div className="flex flex-col justify-center items-center bg-background py-8 ">
       <h1 className="text-2xl md:text-3xl mb-8">Contact Me</h1>
       <div className="px-10 text-center md:px-32  md:max-w-[60rem] mb-8 md:mb-16">
         I am currently seeking new opportunities.

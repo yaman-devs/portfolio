@@ -1,5 +1,5 @@
 "use client";
-import { gsap } from "gsap";
+import { useAnimate, stagger } from "framer-motion";
 import { useEffect } from "react";
 import LocalFont from "next/font/local";
 
@@ -24,21 +24,11 @@ const font = LocalFont({
 });
 
 export default function Hero() {
+  const [scope, animate] = useAnimate();
   const hero = ["YAMAN", "NAYAL", "WEB", "DEVELOPER"];
   useEffect(() => {
     const heroSpans = document.querySelectorAll(".title");
-    gsap.fromTo(
-      heroSpans,
-      { scaleY: 0, opacity: 0 },
-      {
-        scaleY: 1,
-        duration: 0.5,
-        opacity: 1,
-        stagger: 0.2,
-        transformOrigin: "bottom",
-        ease: "power2",
-      }
-    );
+    animate(heroSpans, { scaleY: [0, 1], opacity: 1 }, { delay: stagger(0.2) });
   }, []);
 
   return (
@@ -46,7 +36,7 @@ export default function Hero() {
       <h1 className={font.className + " hero__main"}>
         <div className="hero__title">
           {hero.map((item, i) => (
-            <span className="title__wrapper" key={i}>
+            <span ref={scope} className="title__wrapper" key={i}>
               {" "}
               <span className={"title leading-none"}>{item}</span>
             </span>
