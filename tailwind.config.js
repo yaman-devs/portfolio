@@ -8,11 +8,16 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        text: "#ffffff",
-        background: "#001220",
-        "primary-button": "#2e5573",
-        "secondary-button": "#f3f4f6",
-        accent: "#a9a9bc",
+        // text: "#ffffff",
+        // background: "#272640",
+        // "primary-button": "#073149",
+        // "secondary-button": "#f3f4f6",
+        // accent: "#a9a9bc",
+        text: "#ecf5fe",
+        background: "#01162d",
+        primary: "#e1bf9d",
+        secondary: "#12263b",
+        accent: "#1b81ee",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

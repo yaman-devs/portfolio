@@ -74,8 +74,11 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav className="fixed w-screen z-50">
-      <div className="flex justify-between items-start px-4 2xl:px-80  [&>*]:text-xl  py-5 lg:py-7">
+    <nav className="absolute w-full z-50">
+      <div
+        className="flex justify-between items-start px-4
+      md:px-8 xl:px-16  [&>*]:text-xl  py-5 lg:py-7"
+      >
         <Link href={"/"}>
           <div
             ref={scope}

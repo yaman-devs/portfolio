@@ -1,8 +1,24 @@
 "use client";
+import { useEffect, useRef } from "react";
+import { useInView, animate } from "framer-motion";
 
 export default function Contact() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { margin: "-30%" });
+  useEffect(() => {
+    isInView
+      ? animate(ref.current, {
+          scaleX: [0.8, 1],
+        })
+      : animate(ref.current, {
+          scaleX: [1, 0.8],
+        });
+  }, [isInView]);
   return (
-    <div className="flex flex-col justify-center items-center bg-background py-8 ">
+    <div
+      ref={ref}
+      className="flex flex-col justify-center items-center bg-secondary py-8 "
+    >
       <h1 className="text-2xl md:text-3xl mb-8">Contact Me</h1>
       <div className="px-10 text-center md:px-32  md:max-w-[60rem] mb-8 md:mb-16">
         I am currently seeking new opportunities.
