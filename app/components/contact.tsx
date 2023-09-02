@@ -8,17 +8,16 @@ export default function Contact() {
   useEffect(() => {
     isInView
       ? animate(ref.current, {
-          scaleX: [0.8, 1],
+          width: ["90%", "100%"],
         })
       : animate(ref.current, {
-          scaleX: [1, 0.8],
+          width: ["100%", "90%"],
+          // scaleX: [1, 0.8],
         });
   }, [isInView]);
   return (
-    <div
-      ref={ref}
-      className="flex flex-col justify-center items-center bg-secondary py-8 "
-    >
+    <div className="relative flex flex-col justify-center items-center  py-8 ">
+      <div ref={ref} className="bg-secondary  h-full absolute -z-10"></div>
       <h1 className="text-2xl md:text-3xl mb-8">Contact Me</h1>
       <div className="px-10 text-center md:px-32  md:max-w-[60rem] mb-8 md:mb-16">
         I am currently seeking new opportunities.

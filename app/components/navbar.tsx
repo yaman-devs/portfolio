@@ -103,7 +103,7 @@ export default function Navbar() {
         </Link>
         <a
           href="#contact"
-          className="hover:text-text/70 hover:border-b-2 hover:border-b-accent font-light"
+          className="hover:text-text/70 hover:border-b-2 hover:border-b-primary font-light"
         >
           Contact
         </a>
