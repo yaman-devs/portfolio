@@ -38,16 +38,16 @@ export default function About() {
   }, []);
 
   return (
-    <div className="relative flex flex-col items-center mb-8">
+    <div className="relative flex flex-col  items-center mb-8">
       <div
-        className="absolute -z-10 w-full text-center h-[1px] top-[10%] "
+        className="absolute -z-10 w-full h-[1px] top-5"
         style={{
           background: `linear-gradient(90deg, rgba(2,0,36,0) 0%, rgba(225,191,157,1) ${mouseX}, rgba(0,212,255,0.00043767507002800965) 100%)`,
         }}
       ></div>
-      <div className=" bg-background text-4xl p-4 ">About</div>
-      <div className="grid xl:grid-cols-2 justify-items-center py-8 px-32">
-        <p className="py-8 xl:pt-4 px-4 xl:pl-24 text-xl text-center xl:text-left ">
+      <div className=" bg-background text-4xl px-4">About</div>
+      <div className="grid xl:grid-cols-2 justify-items-center py-8 px-8 xl:px-72">
+        <p className="py-8 xl:pt-4 text-xl text-center xl:text-left ">
           My journey has been all about translating creative visions into
           captivating digital experiences. Proficient in HTML, CSS, and
           JavaScript, I'm dedicated to crafting seamless user interfaces with a
