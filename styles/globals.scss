@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  scroll-behavior: smooth;
+}
 $breakpoints: (
   'narrow': 450px,
   'phone': 768px,
