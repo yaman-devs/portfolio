@@ -15,6 +15,22 @@ export default function Contact() {
           // scaleX: [1, 0.8],
         });
   }, [isInView]);
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData.toString()).toString(),
+    })
+      .then(() => alert("/thank-you/"))
+      .catch((error) => alert(error));
+  };
+
   return (
     <div
       id="contact"
@@ -32,6 +48,8 @@ export default function Contact() {
         method="POST"
         data-netlify="true"
         name="contact"
+        onSubmit={handleSubmit}
+        netlify-honeypot="bot-field"
         className="flex flex-col w-full justify-center gap-2 items-center min-h-[250px] "
       >
         <input type="hidden" name="form-name" value="contact" />

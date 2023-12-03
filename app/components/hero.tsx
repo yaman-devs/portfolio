@@ -40,6 +40,7 @@ export default function Hero() {
         style={{ objectFit: "cover" }}
         fill
         className="gradient-mask-b-10 opacity-[0.35]"
+        priority
       />
       <h1 className={font.className + " hero__main"}>
         <div className="hero__title">
