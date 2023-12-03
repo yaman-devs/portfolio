@@ -31,7 +31,6 @@ export default function Contact() {
       <form
         method="POST"
         data-netlify="true"
-        action={"/"}
         name="contact"
         className="flex flex-col w-full justify-center gap-2 items-center min-h-[250px] "
       >
