@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef } from "react";
-import tw from "tailwind-styled-components";
+import { useInView, useAnimate } from "framer-motion";
 
 export default function ProjectCard({
   title,
@@ -16,78 +16,75 @@ export default function ProjectCard({
   image: string;
   url: string;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const [scope, animate] = useAnimate();
+  const isInView = useInView(scope, { once: true, margin: "-50%" });
+
   const order =
-    ref.current?.parentElement?.children[0] == ref.current
+    scope.current?.parentElement?.children[0] == scope.current
       ? false
       : (Array.prototype.indexOf.call(
-          ref.current?.parentNode?.children,
-          ref.current
+          scope.current?.parentNode?.children,
+          scope.current
         ) &
           2) ==
         0;
+  console.log(order);
+
+  useEffect(() => {
+    isInView &&
+      animate(
+        scope.current,
+        { opacity: [0, 1], x: [`${order ? "-100%" : "100%"}`, "0%"] },
+        { duration: 1.5 }
+      );
+  }, [[scope.current]]);
 
   return (
-    <div ref={ref}>
-      {" "}
-      <div className="hidden xl:grid xl:grid-cols-10 gap-0">
-        <div
-          className="flex flex-col col-span-4 aspect-[4/5] gap-4 z-10 "
-          style={{
-            order: order ? 2 : 1,
-            alignItems: order ? "flex-end" : "flex-start",
-          }}
-        >
-          <h1 className="text-2xl">{title}</h1>
-          <p className=" bg-secondary xl:w-[110%] rounded-lg p-4 text-slate-400">
-            {description}
-          </p>
-          <ul className="flex gap-2 text-gray-500">
-            {tags.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
-        </div>
-        <Link
-          href={url}
-          className="col-span-6  relative "
-          style={{
-            order: order ? 1 : 2,
-            alignItems: order ? "flex-start" : "flex-end",
-          }}
-        >
+    <>
+      <Link href={url} ref={scope} className="opacity-0 max-w-4xl">
+        <div className="hidden border-[1px] border-white/30 bg-secondary rounded-xl lg:flex flex-col ">
           <Image
-            className="aspect-video rounded-lg hover:border-[1px] hover:border-primary"
+            className="aspect-video  "
             src={image}
             alt="Project Image"
             width={1600}
             height={900}
           />
-        </Link>
-      </div>
-      {/* mobile version */}
-      <div className="flex flex-col xl:hidden gap-4">
-        <div className="flex flex-col text-center col-span-4 gap-2">
-          <h1 className="text-2xl">{title}</h1>
-          <Link href={"#"} className="col-span-6">
-            <Image
-              src={image}
-              alt="Project Image"
-              width={1600}
-              height={900}
-              className="aspect-video rounded-lg -z-10"
-            />
-          </Link>
-          <p className=" bg-secondary xl:w-[110%] rounded-lg p-4 text-slate-400">
-            {description}
-          </p>
-          <ul className="flex justify-center gap-2 text-gray-500">
-            {tags.map((item: string, index: number) => (
-              <li key={index}>{item}</li>
-            ))}
-          </ul>
+          <div className="grid grid-cols-2 p-8 ">
+            <div className="flex flex-col ">
+              <h1 className="text-7xl mb-14">{title}</h1>
+              <ul className="flex flex-wrap mt-auto gap-2 text-base ">
+                {tags.map((item: string, index: number) => (
+                  <li className="rounded-full px-2 bg-gray-500" key={index}>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="p-2 text-slate-400">{description}</p>
+          </div>
         </div>
-      </div>
-    </div>
+        <div className="lg:hidden bg-secondary ">
+          <Image
+            src={image}
+            alt="Project Image"
+            width={1600}
+            height={900}
+            className="aspect-video"
+          />
+          <div className="flex flex-col md:gap-4 gap-2 p-4">
+            <h1 className="text-2xl md:text-3xl">{title}</h1>
+            <p className="text-slate-300 text-lg md:text-xl">{description}</p>
+            <ul className="flex flex-wrap mt-8 gap-2 text-base ">
+              {tags.map((item: string, index: number) => (
+                <li className="rounded-full px-2 bg-gray-500" key={index}>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </Link>
+    </>
   );
 }
