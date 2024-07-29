@@ -1,6 +1,6 @@
 "use client";
 import ProjectCard from "./project-card";
-import img from "@/public/images/LittleMissStyle.png";
+import tictactoe from "@/public/images/TicTacToeUnlimited.png";
 import Break from "./break";
 
 export default function Projects() {
@@ -11,19 +11,12 @@ export default function Projects() {
       <div className="flex flex-col items-center py-8 md:py-16 xl:py-16 px-4 md:px-28 xl:px-48 2xl:px-72  text-2xl w-full gap-4 md:gap-16 xl:gap-32 ">
         {" "}
         <ProjectCard
-          title="Little Miss Style"
-          description="Girls dresses clothing brand based in Turkey. Feel free to look around; perhaps you will find something of interest to your daughter."
-          tags={["Nextjs", "WixAPI", "Tailwind"]}
-          image={img.src}
-          url="#"
-        />
-        <ProjectCard
-          title="Little Miss Style"
-          description="
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente odio autem exercitationem unde doloremque repellat blanditiis quibusdam ducimus sint nesciunt ex aperiam optio pariatur, officiis harum nihil quia consequuntur non molestias corporis et necessitatibus maxime! "
-          tags={["Nextjs", "WixAPI", "Tailwind"]}
-          image={img.src}
-          url="#"
+          title="Tic Tac Toe Unlimited"
+          description="This is a game where is no draws. The game is played on a 3x3 grid. You can either play vs computer or vs friend. The first player to get 3 of their marks in a row (up, down, across, or diagonally) gets the points and who reaches 3000 points first wins."
+          tags={["Vue", "Tailwind"]}
+          image={tictactoe.src}
+          url="https://tic-tac-toe-unlimited.netlify.app/"
+          srcUrl="https://github.com/yamansdev/tic-tac-toe-unlimited"
         />
       </div>
     </div>
