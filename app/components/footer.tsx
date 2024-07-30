@@ -64,7 +64,7 @@ export default function Footer() {
             </li>
             <li className="border-[1px] border-slate-400 px-2 bg-secondary p-2 rounded-xl w-8 h-8 md:w-10 md:h-10">
               <a
-                href="https://github.com/yaman-dev"
+                href="https://github.com/yamansdev"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -82,7 +82,7 @@ export default function Footer() {
             </li>
             <li className="border-[1px] border-slate-400 px-2 bg-secondary p-2 rounded-xl w-8 h-8 md:w-10 md:h-10">
               <a
-                href="https://www.linkedin.com/in/yaman/"
+                href="https://www.linkedin.com/in/yamansdev/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
