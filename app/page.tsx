@@ -1,13 +1,10 @@
-import About from "./components/About";
-import Hero from "./components/hero";
-import Projects from "./components/projects";
+import Hero from "./hero";
 
 export default function Home() {
   return (
-    <main>
+    <div className="h-[400vh]">
       <Hero />
-      <About />
-      <Projects />
-    </main>
+      <div className=" h-[100vh] "></div>
+    </div>
   );
 }
