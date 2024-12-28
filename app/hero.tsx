@@ -69,7 +69,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className=" flex flex-col gap-8  items-center justify-center px-96 py-48 ">
+    <div className="flex flex-col gap-8 items-center justify-center py-48 ">
       <Image
         src={background}
         loading="eager"
@@ -80,27 +80,29 @@ export default function Hero() {
       />
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-950 -z-10 "></div>
       <div className="flex flex-col justify-center items-center gap-4">
-        <h1 className="text-8xl font-bold ">
+        <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold ">
           Yaman Nayal
-          <span className="ml-8 absolute">
+          <span className="lg:ml-8 ml-4 sm:absolute  max-sm:hidden">
             {isCode ? (
               <FaCode
                 id="icon"
-                className="inline h-full w-24   text-amber-400 opacity-0"
+                className="inline h-full  lg:w-24   text-amber-400 opacity-0"
               />
             ) : (
               <BiCodeCurly
                 id="icon"
-                className="inline h-full w-24 text-amber-400 opacity-0"
+                className="inline h-full lg:w-24 text-amber-400 opacity-0"
               />
             )}
           </span>
         </h1>
-        <p className="text-5xl text-gray-400 ">Full Stack Developer</p>
-        <p className="text-3xl text-gray-500">
+        <p className="sm:text-3xl md:text-4xl lg:text-5xl text-gray-400 ">
+          Full Stack Developer
+        </p>
+        <p className="sm:text-2xl md:text-3xl  text-gray-500">
           <FaMapMarkerAlt className="inline" /> Bursa, Turkey
         </p>
-        <div className="flex flex-col gap-4  border-y border-amber-400 p-4 text-3xl text-gray-400 ">
+        <div className="flex flex-col gap-4 border-y border-amber-400 p-4 sm:text-2xl md:text-3xl text-gray-400 ">
           <p>
             <span className="text-amber-400">Your Time:</span> {time}
           </p>
@@ -113,7 +115,7 @@ export default function Hero() {
         onClick={() => {
           window.open("/YamanNayalCV.pdf", "_blank");
         }}
-        className="bg-transparent border border-amber-400  px-4 py-2  rounded-md hover:opacity-80 hover:shadow-[0_4px_8px_0_rgba(251,146,60,1)] hover:-translate-y-1 active:scale-90 "
+        className="bg-transparent border border-amber-400  px-4 py-2 rounded-md hover:opacity-80 hover:shadow-[0_4px_8px_0_rgba(251,146,60,1)] hover:-translate-y-1 active:scale-90 "
       >
         Download CV (PDF)
       </button>
