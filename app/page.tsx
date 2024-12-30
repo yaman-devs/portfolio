@@ -70,8 +70,44 @@ export default function Home() {
         stagger: 0.1,
         scrollTrigger: {
           trigger: "#skillset",
-          start: "top center",
+          start: "top 70%",
         },
+      }
+    );
+
+    const tl = gsap.timeline({ paused: true });
+
+    tl.fromTo(
+      "#Projects",
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.5,
+        ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#Projects",
+          start: "top center",
+          onEnter: () => tl.play(),
+        },
+      }
+    );
+    tl.fromTo(
+      "#projectsList>* ",
+      {
+        opacity: 0,
+        y: 100,
+      },
+      {
+        opacity: 1,
+        y: 0,
+        delay: 0.3,
+        duration: 0.5,
+        ease: "power1.inOut",
+        stagger: 0.3,
       }
     );
   }, {});
@@ -92,7 +128,6 @@ export default function Home() {
         <Skills />
         <Spacer section="Projects" />
         <Projects />
-        <div className="h-[400vh]"></div>
       </div>
     </>
   );
