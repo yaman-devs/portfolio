@@ -180,7 +180,10 @@ export default function Home() {
 
   return (
     <>
-      <div className="flex flex-col items-center justify-center    gap-8 md:gap-16 px-8 sm:px-16 xl:px-32 2xl:px-64 ">
+      <div
+        id="home"
+        className="flex flex-col items-center justify-center    gap-8 md:gap-16 px-8 sm:px-16 xl:px-32 2xl:px-64 "
+      >
         <Hero />
         <Spacer section="Skills" />
         <Skills />
@@ -191,9 +194,6 @@ export default function Home() {
         <Spacer section="Contact" />
         <Contact />
       </div>
-      <footer className="flex justify-center p-4 bg-slate-900 text-slate-400 text-sm w-full mt-16">
-        &copy; {new Date().getFullYear()} Yaman Nayal - All rights reserved
-      </footer>{" "}
     </>
   );
 }
