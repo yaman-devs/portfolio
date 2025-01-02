@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
@@ -12,17 +12,26 @@ import classNames from "classnames";
 
 export default function Nav() {
   const [currentLang, setCurrentLang] = useState({
-    lang: localStorage.getItem("lang") || "EN",
-    icon: localStorage.getItem("icon") || "icons/en.svg",
+    lang: "EN",
+    icon: "icons/en.svg",
   });
 
   const [isOpen, setIsOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false);
   const Langs = [
     { lang: "EN", icon: "icons/en.svg" },
     { lang: "AR", icon: "icons/ar.svg" },
     { lang: "TR", icon: "icons/tr.svg" },
   ];
+
+  useEffect(() => {
+    const lang = localStorage.getItem("lang");
+    if (lang) {
+      setCurrentLang({
+        lang: lang,
+        icon: `icons/${lang}.svg`,
+      });
+    }
+  }, []);
 
   const tl = gsap.timeline();
   useGSAP(() => {
