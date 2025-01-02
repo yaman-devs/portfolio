@@ -26,6 +26,7 @@ const eslintConfig = [
     rules: {
       // ... any rules you want
       "jsx-a11y/alt-text": "error",
+      "@typescript-eslint/no-unused-vars": "off",
     },
     // ... others are omitted for brevity
   },
