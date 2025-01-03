@@ -21,9 +21,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en">
       <body className={`${roboto.variable} antialiased bg-slate-950 `}>
-        <ReactLenis root>
+        <ReactLenis options={{ duration: 2 }} root>
           <Nav />
           {children}
           <footer className="flex justify-center p-4 bg-slate-900 text-slate-400 text-sm w-full mt-16">

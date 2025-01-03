@@ -27,7 +27,7 @@ export default function Spacer({ section }: { section: string }) {
     <>
       <div
         id={section}
-        className="relative flex justify-center w-full text-center"
+        className="opacity-0 relative flex justify-center w-full text-center"
       >
         <h1
           className="font-bold sm:text-2xl md:text-3xl

@@ -10,7 +10,7 @@ const SkillCard = ({
   description: string;
 }) => {
   return (
-    <div className="flex items-center justify-start gap-4 border border-amber-400 rounded-md px-4 py-6 w-56 h-16">
+    <div className="opacity-0 flex items-center justify-start gap-4 border border-amber-400 rounded-md px-4 py-6 w-56 h-16">
       <Image
         src={image}
         className="w-[20px] h-[20px] sm:w-[32px] sm:h-[32px]"

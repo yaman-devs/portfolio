@@ -101,9 +101,10 @@ export default function Hero(ref: any) {
   }, []);
 
   return (
-    <div className="grid sm:grid-cols-2 items-center  justify-center sm:justify-end gap-12 sm:gap-16 md:gap-32 xl:gap-48 pt-56 ">
+    <div className=" grid sm:grid-cols-2 items-center  justify-center sm:justify-end gap-12 sm:gap-16 md:gap-32 xl:gap-48 pt-56 ">
       <Image
         src={background}
+        priority
         loading="eager"
         quality={100}
         className="w-full -z-50 opacity-40"
@@ -113,7 +114,7 @@ export default function Hero(ref: any) {
       <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent to-slate-950 -z-40 "></div>
       <div
         id="hero"
-        className="flex flex-col max:justify-center max-sm:items-center w-full gap-4 md:gap-6 lg:gap-8  "
+        className="opacity-0 flex flex-col max:justify-center max-sm:items-center w-full gap-4 md:gap-6 lg:gap-8  "
       >
         <div className="flex flex-col  lg:gap-1 ">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold ">
@@ -167,7 +168,7 @@ export default function Hero(ref: any) {
       </div>
       <p
         id="about"
-        className="text-base sm:text-lg  md:text-2xl lg:text-3xl xl:text-4xl text-balance text-left max-sm:text-center   "
+        className="opacity-0 text-base sm:text-lg  md:text-2xl lg:text-3xl xl:text-4xl text-balance text-left max-sm:text-center   "
       >
         I am a <span className="text-amber-400">web developer</span> with
         experience in building responsive and functional websites. I focus on
