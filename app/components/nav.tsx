@@ -52,7 +52,7 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed z-30 flex justify-between items-center  py-2 lg:py-4 px-8 sm:px-16 xl:px-32 2xl:px-64 bg-slate-950/70 text-slate-400 w-full
+      className="fixed z-30 flex justify-between items-center  py-2 lg:py-4  bg-slate-950/70 text-slate-400 w-full
     "
     >
       <div className="max-sm:hidden flex space-x-4 text-2xl ">

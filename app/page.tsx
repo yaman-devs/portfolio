@@ -182,7 +182,7 @@ export default function Home() {
     <>
       <div
         id="home"
-        className="flex flex-col items-center justify-center    gap-8 md:gap-16 px-8 sm:px-16 xl:px-32 2xl:px-64 max-w-screen-2xl "
+        className="flex flex-col items-center justify-center    gap-8 md:gap-16  "
       >
         <Hero />
         <Spacer section="Skills" />
