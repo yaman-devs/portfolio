@@ -17,7 +17,7 @@ function ProjectCard({
   technologies: string[];
 }) {
   return (
-    <div className="flex flex-col max-w-[500px] gap-4 p-3 sm:p-4  bg-slate-900 border border-amber-400 rounded-md">
+    <div className="flex flex-col max-w-[500px] gap-4 p-3 sm:p-4  bg-slate-900 border border-slate-800  rounded-md">
       <Image
         src={image}
         alt={title}
@@ -35,7 +35,7 @@ function ProjectCard({
           {technologies.map((tech) => (
             <li
               key={tech}
-              className="text-gray-400 border border-amber-400 rounded-full text-xs  px-2 py-1 "
+              className="text-gray-400 border border-slate-700 rounded-full text-xs  px-2 py-1 "
             >
               {tech}
             </li>

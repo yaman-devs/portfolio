@@ -28,8 +28,10 @@ export default function Contact() {
       className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 "
     >
       {contact.map((contact, index) => (
-        <div
-          className="flex items-center gap-4 p-4 bg-slate-900 border border-amber-400 rounded-md"
+        <Link
+          href={contact.link}
+          target="_blank"
+          className="flex items-center gap-4 p-4 bg-slate-900 border border-slate-800 rounded-md"
           key={index}
         >
           <Image
@@ -41,15 +43,9 @@ export default function Contact() {
           />
           <div className="flex flex-col h-full justify-center ">
             <h1 className="text-lg font-bold ">{contact.title}</h1>
-            <Link
-              href={contact.link}
-              target="_blank"
-              className="text-gray-400 text-sm"
-            >
-              {contact.value}
-            </Link>
+            <div className="text-gray-400 text-sm">{contact.value}</div>
           </div>
-        </div>
+        </Link>
       ))}
     </div>
   );

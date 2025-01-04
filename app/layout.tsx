@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { ReactLenis, useLenis } from "lenis/react";
 import Nav from "./components/nav";
 
 const roboto = Roboto({
@@ -21,15 +20,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${roboto.variable} antialiased bg-slate-950 `}>
-        <ReactLenis options={{ duration: 2 }} root>
+    <html lang="en" className="scroll-smooth">
+      <body className={`${roboto.variable} antialiased bg-slate-950  `}>
+        <main className="container mx-auto px-4">
           <Nav />
           {children}
-          <footer className="flex justify-center p-4 bg-slate-900 text-slate-400 text-sm w-full mt-16">
-            &copy; {new Date().getFullYear()} Yaman Nayal - All rights reserved
-          </footer>
-        </ReactLenis>
+        </main>
+        <footer className="flex justify-center p-4 bg-slate-900 text-slate-400 text-sm w-full mt-16">
+          &copy; {new Date().getFullYear()} Yaman Nayal - All rights reserved
+        </footer>
       </body>
     </html>
   );

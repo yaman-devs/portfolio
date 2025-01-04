@@ -1,13 +1,13 @@
 "use client";
 import Image from "next/image";
-import { use, useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { RxCross2 } from "react-icons/rx";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { useLenis } from "lenis/react";
 import classNames from "classnames";
+import Link from "next/link";
 
 export default function Nav() {
   const [currentLang, setCurrentLang] = useState({
@@ -21,7 +21,6 @@ export default function Nav() {
     { lang: "TR", icon: "icons/tr.svg" },
   ];
   const anim = useRef<globalThis.gsap.core.Tween | null>(null);
-  const lenis = useLenis();
 
   useGSAP(() => {
     anim.current = gsap
@@ -57,41 +56,26 @@ export default function Nav() {
     "
     >
       <div className="max-sm:hidden flex space-x-4 text-2xl ">
-        <div
-          onClick={() => lenis?.scrollTo("top")}
-          className="hover:text-white cursor-pointer"
-        >
+        <Link href="#home" className="hover:text-white">
           Home
-        </div>
-        <div
-          onClick={() => lenis?.scrollTo("#Skills")}
-          className="hover:text-white cursor-pointer"
-        >
+        </Link>
+        <Link href={"#Skills"} className="hover:text-white">
           Skills
-        </div>
-        <div
-          onClick={() => lenis?.scrollTo("#Projects")}
-          className="hover:text-white cursor-pointer"
-        >
+        </Link>
+        <Link href={"#Projects"} className="hover:text-white">
           Projects
-        </div>
-        <div
-          onClick={() => lenis?.scrollTo("#Education")}
-          className="hover:text-white cursor-pointer"
-        >
+        </Link>
+        <Link href={"#Education"} className="hover:text-white">
           Education
-        </div>
-        <div
-          onClick={() => lenis?.scrollTo("#Contact")}
-          className="hover:text-white cursor-pointer"
-        >
+        </Link>
+        <Link href={"#Contact"} className="hover:text-white">
           Contact
-        </div>
+        </Link>
       </div>
       {/* Mobile Nav */}
       <div className="hidden max-sm:flex items-center">
         <button
-          className="hover:text-white cursor-pointer"
+          className="hover:text-white"
           onClick={() => {
             // anim.play();
             anim.current?.play();
@@ -104,58 +88,58 @@ export default function Nav() {
           className="opacity-0 absolute top-0 left-0 justify-evenly w-5/6 h-screen  bg-slate-950 flex flex-col px-8 py-32 text-5xl z-20"
         >
           <button
-            className="hover:text-white cursor-pointer absolute top-3 left-8"
+            className="hover:text-white absolute top-3 left-8"
             onClick={() => {
               anim.current?.reverse();
             }}
           >
             <RxCross2 className="text-5xl" />
           </button>
-          <div
+          <Link
+            href={"#home"}
             onClick={() => {
               anim.current?.reverse();
-              lenis?.scrollTo("top");
             }}
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Home
-          </div>
-          <div
+          </Link>
+          <Link
+            href={"#Skills"}
             onClick={() => {
               anim.current?.reverse();
-              lenis?.scrollTo("#Skills");
             }}
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Skills
-          </div>
-          <div
+          </Link>
+          <Link
+            href={"#Projects"}
             onClick={() => {
               anim.current?.reverse();
-              lenis?.scrollTo("#Projects");
             }}
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Projects
-          </div>
-          <div
+          </Link>
+          <Link
+            href={"#Education"}
             onClick={() => {
               anim.current?.reverse();
-              lenis?.scrollTo("#Education");
             }}
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Education
-          </div>
-          <div
+          </Link>
+          <Link
+            href={"#Contact"}
             onClick={() => {
               anim.current?.reverse();
-              lenis?.scrollTo("#Contact");
             }}
-            className="hover:text-white cursor-pointer"
+            className="hover:text-white"
           >
             Contact
-          </div>
+          </Link>
         </div>
       </div>
     </nav>
