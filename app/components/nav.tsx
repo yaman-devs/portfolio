@@ -75,6 +75,7 @@ export default function Nav() {
       {/* Mobile Nav */}
       <div className="hidden max-sm:flex items-center px-4">
         <button
+          aria-label="Toggle Menu"
           className="hover:text-white"
           onClick={() => {
             // anim.play();
@@ -90,6 +91,7 @@ export default function Nav() {
         >
           <button
             className="hover:text-white absolute top-3 left-8"
+            aria-label="Close Menu"
             onClick={() => {
               anim.current?.reverse();
             }}

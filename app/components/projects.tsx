@@ -49,11 +49,10 @@ function ProjectCard({
           >
             <Image
               src="/icons/source.svg"
-              alt="source"
+              alt={title + " source code"}
               width={20}
               height={20}
-              className=""
-            />{" "}
+            />
             Source
           </Link>
           <Link
@@ -63,10 +62,9 @@ function ProjectCard({
           >
             <Image
               src="/icons/website.svg"
-              alt="website"
+              alt={title + " live website"}
               width={20}
               height={20}
-              className=""
             />
             Website
           </Link>
