@@ -10,7 +10,7 @@ const SkillCard = ({
   description: string;
 }) => {
   return (
-    <div className="opacity-0 flex items-center justify-start gap-4 border border-slate-800 rounded-md px-4 py-6 w-56 h-16">
+    <div className="opacity-0 flex items-center justify-start gap-4 border border-slate-800 rounded-md px-4 py-6 aspect-[7/2]">
       <Image
         src={image}
         className="w-[20px] h-[20px] sm:w-[32px] sm:h-[32px]"
@@ -20,7 +20,7 @@ const SkillCard = ({
       />
       <div className="flex flex-col h-full justify-center ">
         <div className="text-sm sm:text-base font-bold">{title}</div>
-        <div className="text-xs text-gray-400">{description}</div>
+        <div className="text-xs md:text-sm  text-gray-400">{description}</div>
       </div>
     </div>
   );
@@ -48,6 +48,16 @@ const skills = [
     description: "JavaScript library",
   },
   {
+    image: "/icons/typescript.svg",
+    title: "Typescript",
+    description: "Typed JavaScript",
+  },
+  {
+    image: "/icons/vuejs.svg",
+    title: "Vue.js",
+    description: "JavaScript framework",
+  },
+  {
     image: "/icons/nextjs.svg",
     title: "Next.js",
     description: "React framework",
@@ -73,7 +83,7 @@ export default function Skills() {
   return (
     <div
       id="skillset"
-      className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-8  "
+      className=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-2 md:gap-4  "
     >
       {skills.map((skill, index) => (
         <SkillCard key={index} {...skill} />

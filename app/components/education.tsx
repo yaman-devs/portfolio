@@ -12,7 +12,7 @@ function EducationCard({
   return (
     <div className="flex flex-col gap-2 p-4 bg-slate-900 border border-slate-800 rounded-md">
       <h1 className="text-lg font-bold ">{FOS}</h1>
-      <p className="text-gray-400 text-sm">{institution}</p>
+      <p className="text-gray-400 text-sm lg:text-base">{institution}</p>
       <p className="text-gray-400 text-sm">
         {startDate} - {endDate}
       </p>
@@ -22,7 +22,7 @@ function EducationCard({
 
 const education = [
   {
-    FOS: "Computer Programming",
+    FOS: "Associate degree in Computer Programming",
     institution: "Anadolu University",
     startDate: "2021",
     endDate: "2023",

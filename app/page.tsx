@@ -15,26 +15,13 @@ export default function Home() {
     tl.fromTo(
       "#hero",
       {
-        opacity: 0,
         y: 100,
+        bottom: 100,
       },
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
-        ease: "power1.inOut",
-      }
-    );
-    tl.fromTo(
-      "#about",
-      {
-        opacity: 0,
-        y: 100,
-      },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
       }
     );
@@ -48,14 +35,10 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
       }
     );
-  }),
-    {};
-
-  useGSAP(() => {
     gsap.fromTo(
       "#skillset>* ",
       {
@@ -70,14 +53,12 @@ export default function Home() {
         stagger: 0.1,
         scrollTrigger: {
           trigger: "#skillset",
-          start: "top 70%",
+          start: "top bottom",
         },
       }
     );
 
-    const tl = gsap.timeline({ paused: true });
-
-    tl.fromTo(
+    gsap.fromTo(
       "#Projects",
       {
         opacity: 0,
@@ -86,16 +67,15 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: "#Projects",
-          start: "top center",
-          onEnter: () => tl.play(),
+          start: "top bottom",
         },
       }
     );
-    tl.fromTo(
+    gsap.fromTo(
       "#projectsList>* ",
       {
         opacity: 0,
@@ -104,18 +84,17 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        delay: 0.3,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
         stagger: 0.3,
+        scrollTrigger: {
+          trigger: "#Projects",
+          start: "top bottom",
+        },
       }
     );
-  }, {});
 
-  useGSAP(() => {
-    const tl = gsap.timeline({ paused: true });
-
-    tl.fromTo(
+    gsap.fromTo(
       "#Education",
       {
         opacity: 0,
@@ -124,16 +103,15 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
         scrollTrigger: {
           trigger: "#Education",
-          start: "top 70%",
-          onEnter: () => tl.play(),
+          start: "top bottom",
         },
       }
     );
-    tl.fromTo(
+    gsap.fromTo(
       "#educationList>* ",
       {
         opacity: 0,
@@ -142,13 +120,16 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        delay: 0.3,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
         stagger: 0.3,
+        scrollTrigger: {
+          trigger: "#Education",
+          start: "top bottom",
+        },
       }
     );
-    tl.fromTo(
+    gsap.fromTo(
       "#Contact",
       {
         opacity: 0,
@@ -157,11 +138,15 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
+        scrollTrigger: {
+          trigger: "#Contact",
+          start: "top bottom",
+        },
       }
     );
-    tl.fromTo(
+    gsap.fromTo(
       "#contactList>* ",
       {
         opacity: 0,
@@ -170,19 +155,22 @@ export default function Home() {
       {
         opacity: 1,
         y: 0,
-        delay: 0.3,
-        duration: 0.5,
+        duration: 0.3,
         ease: "power1.inOut",
-        stagger: 0.3,
+        stagger: 0.1,
+        scrollTrigger: {
+          trigger: "#Contact",
+          start: "top bottom",
+        },
       }
     );
-  }, {});
+  });
 
   return (
     <>
       <div
         id="home"
-        className="flex flex-col items-center justify-center    gap-8 md:gap-16  "
+        className="flex flex-col items-center justify-center    gap-8 md:gap-16 "
       >
         <Hero />
         <Spacer section="Skills" />

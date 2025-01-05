@@ -26,8 +26,8 @@ function ProjectCard({
         className="aspect-video rounded-lg "
       />
       <div>
-        <h1 className="text-lg font-bold ">{title}</h1>
-        <p className="text-gray-400 text-sm">{description}</p>
+        <h1 className="text-lg xl:text-xl font-bold ">{title}</h1>
+        <p className="text-gray-400 text-sm xl:text-base">{description}</p>
       </div>
 
       <div className="flex  max-sm:flex-col max-sm:gap-4 mt-auto">
@@ -35,7 +35,7 @@ function ProjectCard({
           {technologies.map((tech) => (
             <li
               key={tech}
-              className="text-gray-400 border border-slate-700 rounded-full text-xs  px-2 py-1 "
+              className="text-gray-400 border border-slate-700 rounded-full text-xs xl:text-sm px-2 py-1 "
             >
               {tech}
             </li>
@@ -83,7 +83,7 @@ const projects = [
       "My portfolio showcases my work as a web developer, featuring responsive designs, interactive elements, and a focus on clean, functional websites.",
     source: "https://github.com/yamansdev/yamansdev.github.io",
     link: "https://yamansdev.github.io/",
-    technologies: ["Next.js", "Tailwind CSS"],
+    technologies: ["Next.js", "Tailwind"],
   },
   {
     image: "/projects/2.png",
@@ -92,7 +92,7 @@ const projects = [
       "This Tic Tac Toe game has no draws. Play vs a friend or computer. Earn points by aligning 3 marks in a row (up, down, across, or diagonally). First to reach 3000 points wins.",
     source: "https://github.com/yamansdev/tic-tac-toe-unlimited",
     link: "https://tic-tac-toe-unlimited.netlify.app/",
-    technologies: ["vue.js", "Tailwind CSS"],
+    technologies: ["vue.js", "Tailwind"],
   },
 ];
 

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 import Nav from "./components/nav";
 
-const roboto = Roboto({
+const geist = Geist({
   weight: ["100", "300", "400", "500", "700", "900"],
   subsets: ["latin"],
-  variable: "--font-roboto",
 });
 
 export const metadata: Metadata = {
@@ -20,10 +19,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className={`${roboto.variable} antialiased bg-slate-950  `}>
-        <main className="container mx-auto px-4">
-          <Nav />
+    <html lang="en" className="text-white scroll-smooth">
+      <body className={`${geist.className} antialiased bg-slate-950  `}>
+        <Nav />
+        <main className="container mx-auto px-4 sm:px-12 md:px-20 lg:px-32 ">
           {children}
         </main>
         <footer className="flex justify-center p-4 bg-slate-900 text-slate-400 text-sm w-full mt-16">

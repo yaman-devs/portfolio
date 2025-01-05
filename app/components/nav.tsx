@@ -52,10 +52,10 @@ export default function Nav() {
 
   return (
     <nav
-      className="fixed z-30 flex justify-between items-center  py-2 lg:py-4  bg-slate-950/70 text-slate-400 w-full
+      className="fixed z-30 flex sm:justify-center  items-center p-4  bg-slate-900/60 text-slate-400 border-b border-slate-800 w-full
     "
     >
-      <div className="max-sm:hidden flex space-x-4 text-2xl ">
+      <div className="max-sm:hidden flex space-x-8 text-2xl ">
         <Link href="#home" className="hover:text-white">
           Home
         </Link>
@@ -73,7 +73,7 @@ export default function Nav() {
         </Link>
       </div>
       {/* Mobile Nav */}
-      <div className="hidden max-sm:flex items-center">
+      <div className="hidden max-sm:flex items-center px-4">
         <button
           className="hover:text-white"
           onClick={() => {
@@ -81,8 +81,9 @@ export default function Nav() {
             anim.current?.play();
           }}
         >
-          <GiHamburgerMenu className="text-5xl" />
+          <GiHamburgerMenu className="text-3xl" />
         </button>
+
         <div
           id="mobileNav"
           className="opacity-0 absolute top-0 left-0 justify-evenly w-5/6 h-screen  bg-slate-950 flex flex-col px-8 py-32 text-5xl z-20"
